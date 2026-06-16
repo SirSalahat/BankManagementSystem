@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS _PL", "BMS _PL\BMS _PL.csproj", "{9897A1D7-CC41-401B-B9EC-F7CF5FF5B33C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS_DALL", "BMS_DALL\BMS_DALL.csproj", "{173364D4-49D0-472F-9623-88CD92EACFDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS_BLL", "BMS_BLL\BMS_BLL.csproj", "{33C6D739-B16D-4F4B-AADE-E820BE329AC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9897A1D7-CC41-401B-B9EC-F7CF5FF5B33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9897A1D7-CC41-401B-B9EC-F7CF5FF5B33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9897A1D7-CC41-401B-B9EC-F7CF5FF5B33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9897A1D7-CC41-401B-B9EC-F7CF5FF5B33C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173364D4-49D0-472F-9623-88CD92EACFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{173364D4-49D0-472F-9623-88CD92EACFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{173364D4-49D0-472F-9623-88CD92EACFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{173364D4-49D0-472F-9623-88CD92EACFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C6D739-B16D-4F4B-AADE-E820BE329AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C6D739-B16D-4F4B-AADE-E820BE329AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C6D739-B16D-4F4B-AADE-E820BE329AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C6D739-B16D-4F4B-AADE-E820BE329AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B344666-9CAD-4742-8F34-433E7A5108B8}
+	EndGlobalSection
+EndGlobal
