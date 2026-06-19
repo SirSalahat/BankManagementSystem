@@ -20,12 +20,14 @@ namespace BMS_DALL.Classes
         public string Name { get; set; }
         public decimal? Balance { get; set; }
         public int? CardNumber { get; set; }
-        public List<Transaction> Transactions { get; set; }
+        public List<Transaction>? Transactions { get; set; }
+
      
 
-        public AccountType Account_Type { get; set; } 
+        public AccountType? Account_Type { get; set; } 
         public bool IsBlocked { get; set; } = false;
         public decimal? Limit { get; set; }
+        public string? Position{ get; set; }
 
 
     }

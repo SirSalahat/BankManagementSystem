@@ -22,7 +22,7 @@ namespace BMS__PL
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddOpenApi("v1");
             // Add services to the container.
-
+         
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddDbContext<ApplicationDb_Context>(x => x.UseSqlServer(
@@ -30,6 +30,7 @@ namespace BMS__PL
     )); 
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>(); 
             builder.Services.AddScoped<IOperationRepository, OperationRepository>();
+            builder.Services.AddScoped<IManagementRepository, ManagementRepository>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddScoped<IOperationService, OperationService>();
@@ -40,7 +41,6 @@ namespace BMS__PL
 
             option.SignIn.RequireConfirmedAccount = true
             ).AddEntityFrameworkStores<ApplicationDb_Context>().AddDefaultTokenProviders();
-
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

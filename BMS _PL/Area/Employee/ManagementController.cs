@@ -35,7 +35,7 @@ namespace BMS__PL.Area.Employee
                     Console.WriteLine("INNER:");
                     Console.WriteLine(ex.InnerException.ToString());
                 }
-                throw new Exception( ex.ToString());
+                throw new Exception(ex.ToString());
 
             }
             

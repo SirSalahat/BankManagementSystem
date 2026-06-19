@@ -29,6 +29,7 @@ namespace BMS_DALL.DBContextFolder
         {
             base.OnModelCreating(builder);
             builder.Entity<ApplicationUser>().ToTable("Users");
+         
             builder.Entity<IdentityRole>().ToTable("Roles");
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
             builder.Ignore<IdentityUserClaim<string>>();
@@ -40,5 +41,6 @@ namespace BMS_DALL.DBContextFolder
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+       
     }
 }

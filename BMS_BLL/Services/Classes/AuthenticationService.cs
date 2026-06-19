@@ -66,7 +66,6 @@ namespace BMS_BLL.Services.Classes
                 PhoneNumber = registerRequest.PhoneNumber,
                 Account_Type = registerRequest.Account_Type
 
-
             };
             await _usermanager.AddPasswordAsync(user, registerRequest.Password);
             await _usermanager.CreateAsync(user);

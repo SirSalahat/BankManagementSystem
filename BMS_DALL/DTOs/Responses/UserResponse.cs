@@ -14,5 +14,6 @@ namespace BMS_DALL.DTOs.Responses
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public decimal? Balance { get; set; }
+        public string? Position { get; set; }
     }
 }

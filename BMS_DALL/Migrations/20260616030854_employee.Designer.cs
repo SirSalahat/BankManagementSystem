@@ -4,6 +4,7 @@ using BMS_DALL.DBContextFolder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BMS_DALL.Migrations
 {
     [DbContext(typeof(ApplicationDb_Context))]
-    partial class ApplicationDb_ContextModelSnapshot : ModelSnapshot
+    [Migration("20260616030854_employee")]
+    partial class employee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +33,7 @@ namespace BMS_DALL.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Account_Type")
+                    b.Property<int>("Account_Type")
                         .HasColumnType("int");
 
                     b.Property<decimal?>("Balance")
@@ -84,6 +87,7 @@ namespace BMS_DALL.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Position")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
