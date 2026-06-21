@@ -20,7 +20,7 @@ namespace BMS__PL.Area.Employee
             _service = service;
             this.emailService = emailService;
         }
-        [AllowAnonymous]
+      
         [HttpPut("BlockUser")]
         public async Task<IActionResult> BlockUser(string UserId)
         {
@@ -36,7 +36,6 @@ namespace BMS__PL.Area.Employee
                     Console.WriteLine(ex.InnerException.ToString());
                 }
                 throw new Exception(ex.ToString());
-
             }
             
             await _service.Block(UserId);

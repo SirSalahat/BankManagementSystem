@@ -20,9 +20,11 @@ namespace BMS_BLL.Services.Classes
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IManagementRepository repository;
+        private readonly AuthenticationService _authenticationService;
 
-        public ManagementService(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> UserManager,IManagementRepository repository)
+        public ManagementService(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> UserManager,IManagementRepository repository, AuthenticationService authenticationService)
         {
+            _authenticationService = authenticationService;
             this.roleManager = roleManager;
             this.userManager = UserManager;
             this.repository = repository;
@@ -115,7 +117,7 @@ namespace BMS_BLL.Services.Classes
            return await userManager.DeleteAsync(user);
 
         }
-
+        
         public async Task<IdentityResult> UpdateEmployee(string UserId, UserRequest userRequest)
         {
             var user = await userManager.FindByIdAsync(UserId);
@@ -123,25 +125,27 @@ namespace BMS_BLL.Services.Classes
             {
                 throw new Exception("User not found");
             }
+         await   userManager.ChangeEmailAsync(user, userRequest.Email,await _authenticationService.GenerateToken(user));
+         await   userManager.ChangePasswordAsync(user, user.PasswordHash, userRequest.Password);
             userRequest.Adapt(user);
             return  await userManager.UpdateAsync(user);
 
         }
 
-        public async Task<List<UserResponse>> AllEmployee()
+        public async Task<List<EmployeeResponse>> AllEmployee()
         {
             var Employees = await userManager.GetUsersInRoleAsync("Employee");
-            List<UserResponse> EmployeeList = new List<UserResponse>(); 
+            List<EmployeeResponse> EmployeeList = new List<EmployeeResponse>(); 
             foreach (var employee in Employees)
             {
-                var select=new UserResponse
+                var select=new EmployeeResponse
                 {
                     Name = employee.Name,
                     Email = employee.Email,
                     UserName = employee.UserName,
                     PhoneNumber = employee.PhoneNumber,
                     Position = employee.Position,
-                    Balance = employee.Balance
+                   
 
                 };
                 EmployeeList.Add(select);

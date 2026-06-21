@@ -35,6 +35,7 @@ namespace BMS__PL
             builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddScoped<IOperationService, OperationService>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped< AuthenticationService>();
             builder.Services.AddScoped<IManagementService, ManagementService>();
             builder.Services.AddScoped<ISeedData, SeedData>();
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>

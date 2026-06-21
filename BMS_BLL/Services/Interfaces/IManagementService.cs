@@ -19,7 +19,7 @@ namespace BMS_BLL.Services.Interfaces
         public  Task<MessageResponse> AddEmployee(UserRequest request);
         public Task<IdentityResult> DeleteEmployee(string UserId);
         public Task<IdentityResult> UpdateEmployee(string UserId, UserRequest userRequest);
-        public Task<List<UserResponse>> AllEmployee();
+        public Task<List<EmployeeResponse>> AllEmployee();
 
 
 

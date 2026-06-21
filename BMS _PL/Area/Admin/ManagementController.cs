@@ -66,20 +66,23 @@ namespace BMS__PL.Area.Admin
 
         /// <returns></returns>
 
-        [AllowAnonymous]
+        
         [HttpPut("Update/{UserId}")]
-        public async Task<ActionResult> UpdateEmployee(string UserId,UserRequest userRequest)
+        public async Task<ActionResult> UpdateEmployee(string UserId,[FromBody]UserRequest userRequest)
         {
-          
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
             await service.UpdateEmployee(UserId,userRequest);
             return Ok();
 
         }
 
-        [AllowAnonymous]
         [HttpGet("AllEmployee")]
-        public async Task<List<UserResponse>> AllEmployee()
+        public async Task<List<EmployeeResponse>> AllEmployee()
         {
             return await service.AllEmployee();
            
